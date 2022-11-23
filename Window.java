@@ -6,7 +6,6 @@ public class Window extends JFrame
 {
     Window()
     {
-
         setTitle("Bloom");
         setSize(400, 400);
         setLocation(100, 100);

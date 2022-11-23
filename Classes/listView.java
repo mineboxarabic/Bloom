@@ -23,28 +23,35 @@ public class listView extends JPanel {
         String name = JOptionPane.showInputDialog(this,
                         "Task title", null);
         tasks.addTask(new Task(name));
+        LowerPanel.add(new Task(name));
+        updateUI();
     }
     public listView(Tasks tasks)
     {
         this.tasks = new Tasks();
         this.tasks = tasks;
-
+        setVisible(true);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
-
+        
         UpperPanel = new JPanel();
+        UpperPanel.setVisible(true);
         UpperPanel.setLayout(new FlowLayout());
         LowerPanel = new JPanel();
-        add(UpperPanel);
-        add(LowerPanel);
-        LowerPanel.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        LowerPanel.setVisible(true);
+        LowerPanel.setLayout(new BoxLayout(LowerPanel, BoxLayout.Y_AXIS));
+        
+
         JButton button = new JButton("Add Task");
         JButton button2 = new JButton("Remove Task");
+        UpperPanel.add(button);
+        UpperPanel.add(button2);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 addTask();
             }
         });
+        add(UpperPanel);
+        add(LowerPanel);
 
     }
         
