@@ -43,6 +43,12 @@ public class listView extends JPanel {
 
         JButton button = new JButton("Add Task");
         JButton button2 = new JButton("Remove Task");
+        button.setForeground(Color.BLACK);
+        button.setBackground(Color.WHITE);
+        button2.setForeground(Color.BLACK);
+        button2.setBackground(Color.WHITE);
+        button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
         UpperPanel.add(button);
         UpperPanel.add(button2);
         button.addActionListener(new ActionListener() {
